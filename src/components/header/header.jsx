@@ -1,7 +1,5 @@
 import React from 'react';
-import Images from '../ImageComponent/Images'
 import Typewriter from '../../../node_modules/typewriter-effect/dist/react';
-import CardCategory from '../Cat-Slider/CatSlider'
 
 const Header = () =>{
     

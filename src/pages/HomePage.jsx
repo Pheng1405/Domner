@@ -3,6 +3,11 @@ import NavBar from '../components/navbar/NavBar';
 import Footer from '../components/footer/Footer';
 import MainSection from '../components/main-section/MainSection';
 import PopularPlace from '../components/popular-place/PopularPlace';
+import UsefulTip from '../components/UsefulTip/UsefulTip';
+import MostVisited from '../components/MostVisited/MostVisited';
+import History from '../components/History/History';
+import ImagesExplorer from '../components/Image-Section/ImageExplorer';
+import Description from '../components/description/Description';
 const HomePage = () =>{
     return (
         <>
@@ -10,7 +15,13 @@ const HomePage = () =>{
             <Header></Header>
             <MainSection></MainSection>
             <PopularPlace></PopularPlace>
+            <UsefulTip></UsefulTip>
+            <MostVisited></MostVisited>
+            <History></History>
+            <ImagesExplorer></ImagesExplorer>
+            <Description></Description>
             <Footer></Footer>
+            
         </>
     )
 }

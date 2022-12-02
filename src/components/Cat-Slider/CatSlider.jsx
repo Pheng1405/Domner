@@ -1,21 +1,10 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import LeftArrow from '../../svg/arrow-left-thin.svg';
-import RightArrow from '../../svg/arrow-right-thin.svg';
 import Images from "../ImageComponent/Images";
 
 
 export default function CatSlider(prop) {
-
-    const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-        <img src={LeftArrow} alt="prevArrow" {...props} />
-    );
-    
-    const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-        <img src={RightArrow} alt="nextArrow" {...props} />
-    );
-
     const category = [
         {
             placeName : 'Kep',
@@ -55,7 +44,7 @@ export default function CatSlider(prop) {
         infinite: false,
         speed: 500,
         slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
         initialSlide: 0,
         responsive: [
           {
@@ -98,12 +87,10 @@ export default function CatSlider(prop) {
       <>
         <Slider {...settings}>
             {category.map((item,index)=>{
-                    return(
-                        
-                        <div className='cat-box'>
+                    return(  
+                        <div key={index} className='cat-box'>
                             <div className="cat-img-box">
                                 <img src={item.img} alt="" />
-                                <div className="blur"></div>
                             </div>
                             
                           <div className='cat-desc d-flex flex-column justify-content-center'>

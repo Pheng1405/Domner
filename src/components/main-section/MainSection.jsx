@@ -8,7 +8,7 @@ const MainSection = () =>{
                     <div className='row d-flex justify-content-center'>
                         <div className="col-12 title text-center"><h1>The <span>World</span></h1></div>
                     </div>
-                    <div className='row mt-xl-5 d-flex justify-content-center'>
+                    <div className='row mt-lg-5 mb-lg-5 d-flex justify-content-center'>
                         <div className="col-6 d-flex justify-content-center wrap-flex text-center">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita officiis</p>
                         </div>

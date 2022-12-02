@@ -8,6 +8,7 @@ const Images = {
     headLogo7 : require('../../brand/7.png'),
     headLogo8 : require('../../brand/8-nobg.png'),
     head_BgLogo : require('../../images/header-bg.png'),
+    test_logo : require('../../images/testLogo.png'),
 
 
     kep : require('../../images/CategoryImage/kep.jpg'),
