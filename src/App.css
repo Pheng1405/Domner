@@ -6,6 +6,10 @@
   --bs-gutter : 0;
 }
 
+.hover-underline:hover{
+  cursor: pointer;
+  text-decoration: underline !important;
+}
 .row{
   box-sizing: border-box !important;
 }
@@ -14,7 +18,13 @@ h1,h2,h3,h4,h5, p{
   margin: 0 !important;
   padding: 0;
 }
-
+a{
+  color: #000 !important;
+  text-decoration: none !important;
+}
+a > button{
+  color: #FFF;
+}
 
 :root{
   --white  : #ffff;
@@ -37,9 +47,6 @@ h1,h2,h3,h4,h5, p{
   transform: scale(1.2);
 }
 
-body{
-  height: 200vh;
-}
 ul li a{
   color: var(--white) !important;
   font-size: 16px !important;
@@ -117,9 +124,16 @@ button.btn-start{
 button.btn-start:hover{
     background-color: var(--orange);
 }
+button.btn-add-cart{
+  background-color: var(--orange);
+  border: 0;
+  padding: 5px 10px;
+  color: #FFFF;
+  border-radius: 10px;
+}
 
 .categories-item{
-  margin-top: 110px;
+  margin-top: 70px;
   background-color: #ffffff;
 }
 
@@ -261,7 +275,17 @@ button.btn-start:hover{
 
 .place-box{
   width: 100%;
-  height: 430px;
+  height: 330px;
+}
+.place-box:hover{
+  cursor: pointer;
+}
+.place-box:hover .hover-underline{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.place-box:hover .fit-cover{
+  transform: scale(1.2);
 }
 .menu-item{
   width: 95%;
@@ -323,8 +347,8 @@ a.btn-more{
   transform: rotate(0deg);
  }
  a.btn-more:hover{
-  background: linear-gradient(to right,#f18251 ,#a86851);
-  background-color: #f18251;
+  background: linear-gradient(to right,var(--orange) ,#de7852);
+  background-color: var(--orange);
   color: var(--white);
  }
  a.btn-more:active{
@@ -387,11 +411,108 @@ a.btn-more{
 
 /*More description about website*/
 .description-box{
-  height: 250px;
+  height: 200px;
 }
 
 footer{
   height: 50vh;
+  
+}
+
+
+.work {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.about span {
+  font-size: 13px;
+}
+
+.v-profile {
+  cursor: pointer;
+}
+
+.box {
+  -webkit-box-shadow: 13px 12px 5px -10px rgba(196,194,196,0.72);
+  -moz-box-shadow: 13px 12px 5px -10px rgba(196,194,196,0.72);
+  box-shadow: 13px 12px 5px -10px rgba(196,194,196,0.72);
+}
+
+
+.sidebar{
+  height: 70vh;
+  z-index: 1;
+  box-shadow: -1px 1px 10px -1px rgba(240,108,0,0.27);
+-webkit-box-shadow: -1px 1px 10px -1px rgba(240,108,0,0.27);
+-moz-box-shadow: -1px 1px 10px -1px rgba(240,108,0,0.27);
+   
+}
+/* .sidebar.fixed{
+  position: fixed;
+  top: 6%;
+} */
+.aside-content{
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.fs-1rem{
+  font-size: 1rem;
+}
+.fs-0-8rem{
+  font-size: 0.8rem;
+}
+
+
+.right-transform-hover{
+  transition: all .3s;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.right-transform-hover:hover,.right-transform-hover.active{
+  margin-left: 3%;
+  color: var(--orange);
+}
+
+/*Error page*/
+.h404{
+  font-size: 9.375rem;
+}
+.not-found{
+  font-size: 2.5rem;
+  color: #000;
+}
+.btn-start.error{
+  color: var(--white);
+  margin-top: 2rem;
+  transition: .4s;
+  background-color: var(--orange);
+}
+.btn-start.error:hover{
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+/*Auth*/
+.auth-container{
+  width: 30%;
+  height: auto;
+}
+
+/*ticket-detail*/
+.ticket-detail{
+  height: 70vh;
+   /* background-color: #de7852; */
+}
+
+/*Small Slider*/
+.sm-slider{
+  height: 300px;
+}
+
+.sm-img-box, .sm-desc{
+  height: 150px;
 }
 
 /** 
@@ -448,7 +569,7 @@ footer{
 
   .h-card{
     width: 90%;
-    height: 380px;
+    height: auto; /*380px*/;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -490,69 +611,76 @@ footer{
   footer{
     height: auto;
   }
-  
+  .ticket-detail{
+    height: auto;
+     /* background-color: #de7852; */
+  }
 }
 
 
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width : 992px) {
-  /*category -responsive*/
-  .cat-box{
-    height: 350px;
-  }
+    /*category -responsive*/
+    .cat-box{
+      height: 350px;
+    }
 
-  .cat-desc{
-    padding: 20px 0 0 20px;
-  }
-  .cat-desc h1 {
-    font-size: 1rem;
-    margin-bottom: 10px !important;
-  }
-  .cat-desc h1:hover{
-    color: var(--orange);
-  }
+    .cat-desc{
+      padding: 20px 0 0 20px;
+    }
+    .cat-desc h1 {
+      font-size: 1rem;
+      margin-bottom: 10px !important;
+    }
+    .cat-desc h1:hover{
+      color: var(--orange);
+    }
 
-  .category{
-    font-size: 1rem;
-}
-.rating{
-  width: 50%;
-  font-size: 12px;
-  /* background-color: #000; */
-  color:var(--orange);
-  margin-bottom: 10px;
-}
-.h-card{
-  width: 90%;
-  height: 450px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 20px;
-}
-.h-card-img{
-  width: 100%;
-  height: 50%;
-}
-.h-card-desc{
-  width: 100%;
-  height: 50%;
-}
- /*Mostly Visited*/
- .mini-describe{
-  height: 250px;
-  width: 100%;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-.info-box{
-  width: 100%;
-  height: 250px;
-}
-footer{
-  height: auto;
-}
+    .category{
+      font-size: 1rem;
+  }
+  .rating{
+    width: 50%;
+    font-size: 12px;
+    /* background-color: #000; */
+    color:var(--orange);
+    margin-bottom: 10px;
+  }
+  .h-card{
+    width: 90%;
+    height: 450px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+  }
+  .h-card-img{
+    width: 100%;
+    height: 50%;
+  }
+  .h-card-desc{
+    width: 100%;
+    height: 50%;
+  }
+  /*Mostly Visited*/
+  .mini-describe{
+    height: 250px;
+    width: 100%;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  .info-box{
+    width: 100%;
+    height: 250px;
+  }
+  footer{
+    height: auto;
+  }
+  .ticket-detail{
+    height: auto;
+    /* background-color: #de7852; */
+  }
 }
 
 /* // Large devices (desktops, 992px and up) */
@@ -562,6 +690,7 @@ footer{
     width: 90%;
     height: 250px;
   }
+  
 }
 
 /* // X-Large devices (large desktops, 1200px and up) */

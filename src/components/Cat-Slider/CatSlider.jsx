@@ -37,7 +37,7 @@ export default function CatSlider(prop) {
             img : Images.toul_sleng,
             placeNumber : 1
         }
-    ]
+    ];
 
     const settings = {
         dots: true,

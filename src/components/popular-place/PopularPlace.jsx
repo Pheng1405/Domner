@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 const PopularPlace = () =>{
     const [appState, changeState] = useState({
         activeObject : null,
@@ -110,7 +109,7 @@ const PopularPlace = () =>{
             // console.log(currentData.package_filter)
             // console.log(catItem)
             if(catItem === "All"){
-                console.log(currentData.package_filter);
+                // console.log(currentData.package_filter);
                 return currentData.package_filter;
             }
             console.log(catItem)
@@ -177,7 +176,7 @@ const PopularPlace = () =>{
                                                 {/* @place-title */}
                                                 <div className="row row pt-3 ps-3 pe-3 pb-0 m-0">
                                                     <div className="col-6 p-0">
-                                                        <h5 className="">{element.package_title}</h5>
+                                                        <h5 className="hover-underline">{element.package_title}</h5>
                                                     </div>
                                                     <div className="col-6 p-0 d-flex justify-content-end">
                                                         <p className="fw-bold">$ {element.package_price}</p>
@@ -199,14 +198,6 @@ const PopularPlace = () =>{
                                                         <span className="fw-light">
                                                             {element.package_description.substring(0,68)}...
                                                         </span>
-                                                    </div>
-                                                </div>
-
-
-                                                {/* @ btn more */}
-                                                <div className="row">
-                                                    <div className="col-12 d-flex justify-content-end">
-                                                        <Link className="btn-more mt-3 mb-1">Read more</Link>
                                                     </div>
                                                 </div>
                                             </div>
