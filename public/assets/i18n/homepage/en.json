@@ -1,0 +1,16 @@
+{
+    "zone" : "Zone",
+    "attraction" : "Attraction",
+    "za_desc" : "Find out which attractions you like and are interested in",
+    
+    "popular" : "Popular",
+    "tour_package" : "Tour Package",
+    "pt_desc" : "Find popular travel tickets",
+    
+    
+    "mostly" : "Mostly",
+    "visited" : "Visited",
+    "mv_desc" : "Attractions and packages with the largest number of tourists",
+    "image" : "Image",
+    "of_domner" : "of Domner"
+}
