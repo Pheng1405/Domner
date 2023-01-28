@@ -48,7 +48,7 @@ const Register = () =>{
             if(!("error" in regData)){
                 toast.success(`${regData.message}`, {position : "top-center"});
                 navigate("/login");
-                toast.info("Please login...", {position : "top-center"})
+                toast.info("Please login....", {position : "top-center"})
             }
             else{
                 toast.error(`${regData.error}`, {position : "top-center"});
