@@ -1,6 +1,6 @@
 import { addToCart } from "../../features/cartSlice";
 import { Link, useParams } from "react-router-dom";
-import SmallSlider from "../Small-Slider/SmallSlider";
+import AttractionSlider from "../Small-Slider/AttractionSlider";
 import { useGetTicketQuery } from "../../features/ticketApi";
 import { useDispatch } from "react-redux";
 import Spinner from "../spinner/Spinner";
@@ -115,7 +115,7 @@ export const TicketPreview = () => {
                                         {
                                             ticketDetail.map((element)=>{
                                                 return(
-                                                    <SmallSlider key={element.id} slideDetail={element.related}></SmallSlider>
+                                                    <AttractionSlider key={element.id} slideDetail={element.related}></AttractionSlider>
                                                 )
                                             })
                                         }

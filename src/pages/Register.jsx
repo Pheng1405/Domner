@@ -2,10 +2,10 @@ import NavBar from "../components/navbar/NavBar";
 import Footer from "../components/footer/Footer";
 import { useState } from "react";
 import registerUser, { useRegisterUserMutation } from "../features/authApi";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { getSpaceUntilMaxLength } from "@testing-library/user-event/dist/utils";
 
 const Register = () =>{
     const navigate = useNavigate();
@@ -91,7 +91,6 @@ const Register = () =>{
                                 {profile && <div className="d-flex"><img align={"left"} className="d-block" src={profile} width={100} height={100} alt="" /></div>}
                                 <p className="small my-2 pb-lg-2"><a className="text-white fw-bold" href="#!">Forgot password?</a></p>
 
-                                <button className="btn btn-outline-light btn-lg px-5">Register</button>
 
                                 <div className="d-flex justify-content-center text-center mt-2 pt-1">
                                     <a href="#!" className="text-white"><i className="fab fa-facebook-f fa-lg"></i></a>
@@ -102,7 +101,7 @@ const Register = () =>{
                                 </div>
 
                                 <div>
-                                <p className="mb-0">Already have an account? <a href="#!" className="text-white fw-bold">Log In</a>
+                                <p className="mb-0">Already have an account? <Link to={`/login`} className="text-white fw-bold">Log In</Link>
                                 </p>
                                 </div>
 

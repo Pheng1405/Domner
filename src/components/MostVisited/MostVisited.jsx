@@ -69,14 +69,16 @@ const MostVisited = () =>{
                             )   
                         })
                     }
-                    <div className="col-12 col-lg-4 p-0 mt-5 m-sm-0 bg-warning">
-                        <div className="info-box pt-4 ps-5 text-light">
-                            <h2 className="pt-3 fw-bolder">Info Box</h2>
-                            <p className="lead mt-1  mt-xl-3">100% Responsive</p>
-                            <p className="lead mt-1  mt-xl-3">100% Responsive</p>
-                            <p className="lead mt-1  mt-xl-3">100% Responsive</p>
-                            <p className="lead mt-1  mt-xl-3">100% Responsive</p>
-                            <p className="lead mt-1  mt-xl-3">100% Responsive</p>
+                    <div className="col-12 col-lg-4 p-0 mt-5 m-sm-0 bg-warning h-100">
+                        <div className="info-box text-light h-100">
+                            <div className="h-50">
+                                <img className="fit-cover" src="https://www.hollywoodreporter.com/wp-content/uploads/2017/10/gettyimages-858460012_-_h_2017.jpg" alt="" />
+                            </div>
+                            <div className="h-50 py-4 px-2">
+                                <p className="lead mb-3">Jackie Chan was asked, "What advice would give to people?" He replied,</p>
+                                <h3>"Travel! Your money will return, your time won't."</h3>
+                            </div>
+
                         </div>
                     </div>
                 </div>

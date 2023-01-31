@@ -26,9 +26,8 @@ const ZoneDetail = () =>{
     const getZone = async () =>{
         await axios.get(`https://domner-server.onrender.com/api/zone/${id}`)
         .then((res)=>{
-            let data = res.data;
+            let data = res.data[0];
 
-            data = data[0];
             setZone(data);
             setActivity(data.suggestion_activity);
             // console.log(data.suggestion_activity);
@@ -116,7 +115,7 @@ const ZoneDetail = () =>{
                                 // console.log(element[ind]);
 
                                 if(element.length > 1){
-                                    console.log(element);
+                                  
                                     
                                 
                                     for(let i in element){
@@ -140,8 +139,10 @@ const ZoneDetail = () =>{
                                 }
                                 if(element.length == 1){
                                     for(let i in element){
-                                        // console.log(element[i]);
+                                
+                                        
                                         return(
+                                           
                                             <div className="container" key={element[i].id}>
                                                     <div className="row">
                                                         <div className="col-12 col-md-3">

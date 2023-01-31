@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 
-export default function SmallSlider(props) {
+export default function AttractionSlider(props) {
     console.log(props)
     const slideDetail = props.slideDetail; 
    
@@ -58,18 +58,9 @@ export default function SmallSlider(props) {
       <>
         <Slider {...settings}>
             {slideDetail.map((item,index)=>{
-                    {
-                      console.log(item.type)
-                      // item.type.indexOf(" ") >= 0 ?
-                      //   item.type.replace(" ", "")
-
-                      // : 
-                      //   item.type = item.type
-
-                    }
+                    
                     return(
-                      
-                        <Link key={index} to={`../${item.type.replace(" ", "")}/${item.id}`}>
+                        <Link key={index} to={`../attraction/${item.id}`}>
                             <div key={index} className='sm-slider'>
                                 <div className="sm-img-box">
                                     <img src={item.thumbnail} className="fit-cover" alt="" />

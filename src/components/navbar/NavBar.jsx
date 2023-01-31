@@ -64,8 +64,11 @@ const NavBar = () =>{
             {/* <!-- Collapsible wrapper --> */}
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             {/* <!-- Navbar brand --> */}
+
+           
+
             <Link to={`/`} className="navbar-brand mt-2 mt-lg-0" >
-                <img src={logo.thumbnail} height="40" alt="logo" loading="lazy"/>
+                <img  src={logo.thumbnail ? logo.thumbnail : "https://dummyimage.com/120x40/ef6c00"} height="40" alt="logo" loading="lazy"/>
             </Link>
             {/* <!-- Left links --> */}
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">

@@ -25,8 +25,7 @@ i18n.use(Backend)
         },
         
         react:{
-            wait : true,
-            useSuspense: true,
+            useSuspense: false,
         }
     });
 

@@ -28,7 +28,7 @@ const CartList = () =>{
     return(
         cart.cartItems.length === 0
         ? 
-        <div className=" p-5 m-5 container">
+        <div className="p-5 m-5 container">
             <div className="row">
                 <div className="col-12 d-flex justify-content-center">
                     <div className="row">

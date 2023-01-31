@@ -9,13 +9,13 @@ import TicketDetail from './pages/TicketDetail';
 import ZoneDetail from './pages/ZoneDetail';
 import Attraction from './pages/Attraction';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
-import { Suspense } from 'react';
 import Zone from './pages/Zone';
 import Cart from './pages/Cart';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import Register from './pages/Register';
 import Test from './pages/test';
+import HotelEatery from './pages/HotelEatery';
 function App() {
   return (
     <>
@@ -33,6 +33,9 @@ function App() {
             <Route path="/zone/:id" element={<ZoneDetail/>}/>
             <Route path="/test" element={<Test/>}/>
             <Route path="/attraction/:id" element={<TicketDetail/>}/>
+            <Route path="/todo/:id" element={<TicketDetail/>}/>
+            <Route path="/tostay/:id" element={<HotelEatery/>}/>
+            <Route path="/toeat/:id" element={<HotelEatery/>}/>
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path='/register' element={<Register/>}/>

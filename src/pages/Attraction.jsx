@@ -28,7 +28,7 @@ const Attraction = () =>{
                                                 <div className="card-body">
                                                     <div className="text-center">
                                                         <h5 className="card-title">{element.title}</h5>
-                                                        <p className="text-muted mb-4">Attraction : {10} places</p>
+                                                        <p className="text-muted mb-4">Zone : {element.zone}</p>
                                                     </div>
                                                     <div>
                                                         <div className="d-flex justify-content-between">
