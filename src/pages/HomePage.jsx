@@ -13,7 +13,7 @@ const HomePage = () =>{
     return (
         <>
             
-            <NavBar></NavBar>
+            
             <Header></Header>
             <MainSection></MainSection>
             <PopularPlace></PopularPlace>
@@ -21,7 +21,7 @@ const HomePage = () =>{
             <History></History>
             <ImagesExplorer></ImagesExplorer>
             <Description></Description>
-            <Footer></Footer>
+            
             
         </>
     )

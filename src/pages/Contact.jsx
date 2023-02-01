@@ -29,9 +29,7 @@ const Contact = () =>{
     }
     return (
         
-        <>
-            <NavBar></NavBar>
-            
+        <>        
             {
                 isLoading.current
                 ?
@@ -70,8 +68,6 @@ const Contact = () =>{
                     </div>
                 </>
             }
-            
-            <Footer></Footer>
         </>
     );
 }

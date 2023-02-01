@@ -57,7 +57,6 @@ const Register = () =>{
     },[regData])
     return(
         <>
-            <NavBar/>
             <form action="" onSubmit={(e)=>handleSubmit(e)}>
                 <section className="gradient-custom">
                     <div className="container py-2 h-100">
@@ -89,7 +88,10 @@ const Register = () =>{
                                     {!profile && <label className="form-label">Profile Photo {`(Optional)`}</label>     }   
                                 </div>
                                 {profile && <div className="d-flex"><img align={"left"} className="d-block" src={profile} width={100} height={100} alt="" /></div>}
-                                <p className="small my-2 pb-lg-2"><a className="text-white fw-bold" href="#!">Forgot password?</a></p>
+                                
+
+                                <button type="submit" className="btn btn-outline-light btn-lg px-5">Register</button>
+
 
 
                                 <div className="d-flex justify-content-center text-center mt-2 pt-1">
@@ -112,7 +114,6 @@ const Register = () =>{
                     </div>
                 </section>
             </form>
-            <Footer/>
         </>
     )
 }

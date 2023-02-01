@@ -7,7 +7,6 @@ const Attraction = () =>{
     const {data, err, isLoading} = useGetAllTicketQuery();
     return(
         <>
-            <NavBar/>
             {
                 isLoading
                 ? 
@@ -51,7 +50,6 @@ const Attraction = () =>{
                 </section>
             }
             
-            <Footer/>
         </>
     )
 }

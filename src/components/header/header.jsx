@@ -26,7 +26,7 @@ const Header = () =>{
                                 }}
                             />
                     </h2>
-                    <button className='btn-start'><Link to={`/register`} className='text-white'>{t("start")}</Link></button>
+                    <Link to={`/zone`}> <button className='text-white btn-start'>{t("start")}</button></Link>
                 </div>   
             </header>
 

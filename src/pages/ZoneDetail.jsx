@@ -55,7 +55,6 @@ const ZoneDetail = () =>{
 
     return (
         <>
-            <NavBar/>
             {
                 !isFetched.current ?
                    <Spinner></Spinner>  
@@ -207,7 +206,6 @@ const ZoneDetail = () =>{
                 </div>
             }
             
-            <Footer></Footer>
         </>
         
       );

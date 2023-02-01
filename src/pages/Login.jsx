@@ -51,7 +51,6 @@ const Login = () =>{
     }, [loginData]);
     return(
         <>
-            <NavBar/>
             <form action="" onSubmit={handleSubmit}>
                 <section className="gradient-custom">
                     <div className="container py-2 h-100">
@@ -99,7 +98,6 @@ const Login = () =>{
                     </div>
                 </section>
             </form>
-            <Footer/>
         </>
     )
 }

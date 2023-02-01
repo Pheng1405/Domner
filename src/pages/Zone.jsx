@@ -33,7 +33,6 @@ const Zone = () =>{
     }
     return(
         <>
-            <NavBar></NavBar>
             {
                 isLoading.current
                 ? 
@@ -70,8 +69,6 @@ const Zone = () =>{
                 :
                 <Spinner></Spinner>
             }
-            
-            <Footer></Footer>
         </>
     );
 }
