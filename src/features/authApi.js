@@ -22,6 +22,9 @@ export const authApi = createApi({
                     url : "/api/register",
                     method : "post",
                     body : {username, email , password, profile},
+                    headers : {
+                        'Access-Control-Allow-Origin': '*'
+                    }
                 }
             }
         }),
