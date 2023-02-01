@@ -17,7 +17,10 @@ const ZoneDetail = () =>{
     const isFetched = useRef(false);
 
     useEffect(()=>{
+        isFetched.current = false;
         getZone();
+        isFetched.current = true;
+        console.log("useeffect rerendered")
     },[id]);
 
     const getZone = async () =>{
@@ -53,7 +56,8 @@ const ZoneDetail = () =>{
     return (
         <>
             {
-                !isFetched.current ?
+                // !isFetched.current ?
+                !isFetched.current  ?
                    <Spinner></Spinner>  
                 :
 
