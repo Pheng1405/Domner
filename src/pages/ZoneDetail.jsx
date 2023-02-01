@@ -17,11 +17,8 @@ const ZoneDetail = () =>{
     const isFetched = useRef(false);
 
     useEffect(()=>{
-      if(!isFetched.current){
         getZone();
-        isFetched.current = true;
-      }
-    },[]);
+    },[id]);
 
     const getZone = async () =>{
         await axios.get(`https://domner-server.onrender.com/api/zone/${id}`)

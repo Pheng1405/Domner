@@ -19,7 +19,6 @@ import HotelEatery from './pages/HotelEatery';
 import NavBar from './components/navbar/NavBar';
 import Footer from './components/footer/Footer';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
-
 if (process.env.NODE_ENV === 'production') {
   disableReactDevTools();
 }
