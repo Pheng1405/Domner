@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 
 export default function SmallSlider(props) {
-    console.log(props)
+    // console.log(props)
     const slideDetail = props.slideDetail; 
    
 
@@ -52,14 +52,14 @@ export default function SmallSlider(props) {
     //     }));
     //   };
     
-    console.log(slideDetail);
+    // console.log(slideDetail);
      
     return (
       <>
         <Slider {...settings}>
             {slideDetail.map((item,index)=>{
                     {
-                      console.log(item.type)
+                      // console.log(item.type)
                       // item.type.indexOf(" ") >= 0 ?
                       //   item.type.replace(" ", "")
 

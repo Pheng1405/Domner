@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import NavBar from "../components/navbar/NavBar";
-import Footer from "../components/footer/Footer";
 import SmallSlider from "../components/Small-Slider/SmallSlider";
 import { useRef } from "react";
 import Spinner from "../components/spinner/Spinner";
@@ -20,7 +18,6 @@ const ZoneDetail = () =>{
         isFetched.current = false;
         getZone();
         isFetched.current = true;
-        console.log("useeffect rerendered")
     },[id]);
 
     const getZone = async () =>{

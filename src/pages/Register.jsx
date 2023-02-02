@@ -20,7 +20,7 @@ const Register = () =>{
     const [registerUser, {data : regData, isSuccess : isRegSuccess, isError : isRegError, error : regError}] = useRegisterUserMutation();
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        console.log(profile);
+        // console.log(profile);
 
         if(email && password && username){
             await registerUser({username, email, password, profile});
@@ -45,7 +45,7 @@ const Register = () =>{
 
     useEffect(()=>{
         if(regData){
-            console.log(regData)
+            // console.log(regData)
             if(!("error" in regData)){
                 toast.success(`${regData.message}`, {position : "top-center"});
                 navigate("/login");

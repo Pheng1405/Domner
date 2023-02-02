@@ -10,7 +10,7 @@ export const TicketPreview = () => {
     
     const handleAddToCart = (item) =>{
         dispatch(addToCart(item));
-        console.log(item);
+        // console.log(item);
     }
 
     let id = useParams("id");

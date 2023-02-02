@@ -23,7 +23,7 @@ const Zone = () =>{
         try{
             const result = await axios.get(zoneUrl);
             setData(result.data.data);
-            console.log(result.data);
+            // console.log(result.data);
             // setThumbnail(data[0].thumbnail.split(" ")[0]);
             
         }

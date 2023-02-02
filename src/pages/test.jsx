@@ -11,8 +11,8 @@ const Test = () =>{
             : setStatus("click again btn change to false");
         
         
-        console.log(isClick);
-        console.log(status)
+        // console.log(isClick);
+        // console.log(status)
 
         setIsClick(!isClick);
     }

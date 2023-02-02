@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 
 export default function AttractionSlider(props) {
-    console.log(props)
+    // console.log(props)
     const slideDetail = props.slideDetail; 
    
 
@@ -52,7 +52,7 @@ export default function AttractionSlider(props) {
     //     }));
     //   };
     
-    console.log(slideDetail);
+    // console.log(slideDetail);
      
     return (
       <>

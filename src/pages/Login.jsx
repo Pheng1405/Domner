@@ -43,7 +43,7 @@ const Login = () =>{
                 
             }
             else{
-                console.log(loginData);
+                // console.log(loginData);
                 toast.error(`${loginData?.error}`, {position : "top-center"});
 
             }

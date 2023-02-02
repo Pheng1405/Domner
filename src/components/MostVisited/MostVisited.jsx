@@ -22,7 +22,7 @@ const MostVisited = () =>{
         }
         catch(error){
             setMostVisit([]);
-            console.log(error);
+            // console.log(error);
         }
         
     }
