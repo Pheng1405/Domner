@@ -1,5 +1,5 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import { useSelector } from "react-redux";
+
 
 export const authApi = createApi({
     reducerPath : "ticketApi",
@@ -33,10 +33,9 @@ export const authApi = createApi({
         editProfile : builder.mutation({
             query : ({profile, username})=>{
                 return{
-                    url : "/api/edit-profile-pic",
+                    url : `/api/edit-profile-pic/${username}`,
                     method : "PUT",
                     body : {profile},
-                    params : {username},
                     headers : {
                         'Access-Control-Allow-Origin': '*'
                     }
