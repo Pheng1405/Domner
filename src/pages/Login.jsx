@@ -1,5 +1,3 @@
-import NavBar from "../components/navbar/NavBar";
-import Footer from "../components/footer/Footer";
 import {useState} from "react";
 import { Link } from "react-router-dom";
 import {useNavigate} from "react-router-dom";

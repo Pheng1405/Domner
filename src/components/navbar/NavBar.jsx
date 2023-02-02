@@ -135,7 +135,7 @@ const NavBar = () =>{
 
                     <ul className='dropdown-menu dropdown-menu-end bg-orange p-0' aria-labelledby="navbarDropdownMenuAvatar">
                         <li className='bg-orange'>
-                            <Link className="dropdown-item hover-black" >My profile</Link>
+                            <Link to={`/profile/${user.username}`} className="dropdown-item hover-black" >My profile</Link>
                         </li>
                         <li className='bg-orange'>
                             <Link className="dropdown-item hover-black" >Settings</Link>

@@ -19,6 +19,7 @@ import HotelEatery from './pages/HotelEatery';
 import NavBar from './components/navbar/NavBar';
 import Footer from './components/footer/Footer';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
+import Profile from './pages/Profile';
 if (process.env.NODE_ENV === 'production') {
   disableReactDevTools();
 }
@@ -48,6 +49,7 @@ function App() {
               <Route path="/toeat/:id" element={<HotelEatery/>}/>
               <Route path="/cart" element={<Cart/>}/>
               <Route path="/login" element={<Login/>}/>
+              <Route path="/profile/:username" element={<Profile/>}/>
               <Route path='/register' element={<Register/>}/>
               <Route path="/*" element={<Error/>}/>
             </Routes>

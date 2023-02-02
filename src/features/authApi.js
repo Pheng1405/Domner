@@ -1,4 +1,5 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
+import { useSelector } from "react-redux";
 
 export const authApi = createApi({
     reducerPath : "ticketApi",
@@ -28,7 +29,21 @@ export const authApi = createApi({
                 }
             }
         }),
+
+        editProfile : builder.mutation({
+            query : ({profile, username})=>{
+                return{
+                    url : "/api/edit-profile-pic",
+                    method : "post",
+                    body : {profile},
+                    params : {username},
+                    headers : {
+                        'Access-Control-Allow-Origin': '*'
+                    }
+                }
+            }
+        })
     })
 });
 
-export const {useLoginUserMutation, useRegisterUserMutation} = authApi; 
+export const {useLoginUserMutation, useRegisterUserMutation, useEditProfileMutation} = authApi; 
