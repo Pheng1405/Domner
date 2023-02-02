@@ -135,9 +135,6 @@ const NavBar = () =>{
                             <Link to={`/profile/${user.username}`} className="dropdown-item hover-black" >My profile</Link>
                         </li>
                         <li className='bg-orange'>
-                            <Link className="dropdown-item hover-black" >Settings</Link>
-                        </li>
-                        <li className='bg-orange'>
                             <Link to={`../`} className="dropdown-item hover-black" onClick={()=>{dispatch(logoutUser());}} >Logout</Link>
                         </li>
                     </ul>

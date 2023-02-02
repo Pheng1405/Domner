@@ -31,9 +31,9 @@ const Profile = (req, res) =>{
     }
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        console.log("Handle Submit Work")
-        console.log(profile);
-        console.log(username)
+        // console.log("Handle Submit Work")
+        // console.log(profile);
+        // console.log(username)
 
         if(profile){
             await editProfile({profile, username});
