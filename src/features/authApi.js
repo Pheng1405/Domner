@@ -34,7 +34,7 @@ export const authApi = createApi({
             query : ({profile, username})=>{
                 return{
                     url : "/api/edit-profile-pic",
-                    method : "post",
+                    method : "PUT",
                     body : {profile},
                     params : {username},
                     headers : {
