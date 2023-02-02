@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-
+import { useNavigate } from 'react-router-dom';
 import i18next from 'i18next';
 // import "flag-icons";
 import "../../../node_modules/flag-icons/css/flag-icons.min.css";
@@ -45,10 +45,7 @@ const NavBar = () =>{
 
     const cart = useSelector(state=>state.cart);
 
-    
-
-
-
+    const navigate = useNavigate();
     return (
         
 
@@ -141,7 +138,7 @@ const NavBar = () =>{
                             <Link className="dropdown-item hover-black" >Settings</Link>
                         </li>
                         <li className='bg-orange'>
-                            <Link className="dropdown-item hover-black" onClick={()=>dispatch(logoutUser())} >Logout</Link>
+                            <Link to={`../`} className="dropdown-item hover-black" onClick={()=>{dispatch(logoutUser());}} >Logout</Link>
                         </li>
                     </ul>
 

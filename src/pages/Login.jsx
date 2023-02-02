@@ -18,9 +18,6 @@ const Login = () =>{
     const handleSubmit = async (e) =>{
         e.preventDefault();
         let data  = {email : email, password : password};
-
-        
-
         if(email && password){
             await loginUser({email, password});
         }
@@ -37,7 +34,7 @@ const Login = () =>{
                  dispatch(setUser(loginData));    
                  toast.success("Login Success...", {position : "top-center"});
                  localStorage.setItem("access-token", JSON.stringify(loginData));
-                navigate("/");
+                 navigate("/");
                 
             }
             else{

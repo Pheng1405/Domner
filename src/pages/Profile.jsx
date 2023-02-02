@@ -1,18 +1,20 @@
 import { useRef } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import editProfile, { useEditProfileMutation } from "../features/authApi";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import {setUserProfile} from "../features/authSlice"
+
 const Profile = (req, res) =>{
     const user= useSelector(state => state.user.userProfile);
     const [editProfile, {data : regData, isSuccess : isRegSuccess, isError : isRegError, error : regError}] = useEditProfileMutation();
-    // const [profile, setProfile] = useState("");
     const inputFile = useRef(null);
     const submitForm = useRef(null);
     let username = useParams("username");
     username = username.username;
-    let profile = useRef(null);  
+    let profile = useRef(null); 
+
     const setFileToBase = (file) =>{
         const reader = new FileReader();
         reader.readAsDataURL(file);
@@ -22,6 +24,7 @@ const Profile = (req, res) =>{
             submitForm.current.click();
         }
     }
+    const dispatch = useDispatch();
     const handleImage = (e) =>{
         const file = e.target.files[0];
         setFileToBase(file);
@@ -34,6 +37,7 @@ const Profile = (req, res) =>{
 
         if(profile){
             await editProfile({profile, username});
+            dispatch(setUserProfile(profile));
         }
         else{
             toast.error("Please choose a profile picture...", {position : "top-center"});

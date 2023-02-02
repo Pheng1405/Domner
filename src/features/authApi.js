@@ -1,10 +1,12 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
+import { useSelector } from "react-redux";
 
 
 export const authApi = createApi({
     reducerPath : "ticketApi",
     baseQuery   : fetchBaseQuery({
         baseUrl : "https://domner-server.onrender.com"
+        // baseUrl : "http://localhost:10000"
     }),
     endpoints   : (builder) =>({
         loginUser : builder.mutation({
@@ -30,13 +32,14 @@ export const authApi = createApi({
             }
         }),
 
-        editProfile : builder.mutation({
+        editProfile : builder.mutation(
+            
+            {
             query : ({profile, username})=>{
                 return{
                     url : `/api/edit-profile-pic/`,
                     method : "PUT",
-                    body : {profile},
-                    params : {username},
+                    body : {profile, username},
                     headers : {
                         'Access-Control-Allow-Origin': '*'
                     }
