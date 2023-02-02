@@ -33,9 +33,10 @@ export const authApi = createApi({
         editProfile : builder.mutation({
             query : ({profile, username})=>{
                 return{
-                    url : `/api/edit-profile-pic/${username}`,
+                    url : `/api/edit-profile-pic/`,
                     method : "PUT",
                     body : {profile},
+                    params : {username},
                     headers : {
                         'Access-Control-Allow-Origin': '*'
                     }
