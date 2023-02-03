@@ -20,6 +20,7 @@ import NavBar from './components/navbar/NavBar';
 import Footer from './components/footer/Footer';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 import Profile from './pages/Profile';
+import Search from './pages/Search';
 if (process.env.NODE_ENV === 'production') {
   disableReactDevTools();
 }
@@ -52,6 +53,7 @@ function App() {
               <Route path="/profile/:username" element={<Profile/>}/>
               <Route path='/register' element={<Register/>}/>
               <Route path="/*" element={<Error/>}/>
+              <Route path='/search' element={<Search/>}></Route>
             </Routes>
             <Footer/>
         </BrowserRouter>

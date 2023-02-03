@@ -56,6 +56,7 @@ const Register = () =>{
             }
         }
     },[regData])
+
     return(
         <>
             <form action="" onSubmit={(e)=>handleSubmit(e)}>

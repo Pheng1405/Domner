@@ -94,6 +94,9 @@ const NavBar = () =>{
             {/* <!-- Right elements --> */}
             <div className="d-flex align-items-center">
             {/* <!-- Icon --> */}
+            <div className='me-3'>
+                <Link to={`/search`}><i class="fa fa-search" aria-hidden="true"></i></Link>
+            </div>
             <Link to={`/cart`} className="text-reset me-3" >
                 <i className="fas fa-shopping-cart"></i>
                 
@@ -174,7 +177,7 @@ const NavBar = () =>{
 
                 </div>
             }
-
+            
             <div className="dropdown ms-3">
                 <Link
                     className="dropdown-toggle d-flex align-items-center hidden-arrow"
@@ -188,7 +191,7 @@ const NavBar = () =>{
                         <img width={25} src="https://res.cloudinary.com/dfflcuoxi/image/upload/v1674030114/icons8-translator-50_stmmgr.png" alt="" />
                     </span>
                 </Link>
-
+                
                 <ul className='dropdown-menu dropdown-menu-end bg-orange p-0' aria-labelledby="navbarDropdownMenu">
                     
                     <form>
@@ -201,6 +204,8 @@ const NavBar = () =>{
                     </form>
                     
                 </ul>
+
+                
             </div>
             </div>
             {/* <!-- Right elements --> */}
