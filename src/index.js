@@ -23,7 +23,8 @@ const store = configureStore({
   },
   middleware : (getDefaultMiddleware) =>{
     return getDefaultMiddleware().concat(ticketApi.middleware);
-  }
+  },
+  devTools: process.env.NODE_ENV !== 'production',
   
 });
 

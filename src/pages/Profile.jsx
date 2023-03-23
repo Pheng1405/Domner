@@ -11,8 +11,8 @@ const Profile = (req, res) =>{
     const [editProfile, {data : regData, isSuccess : isRegSuccess, isError : isRegError, error : regError}] = useEditProfileMutation();
     const inputFile = useRef(null);
     const submitForm = useRef(null);
-    let username = useParams("username");
-    username = username.username;
+    let email = useParams("email");
+    email = email.email;
     let profile = useRef(null); 
 
     const setFileToBase = (file) =>{
@@ -31,22 +31,15 @@ const Profile = (req, res) =>{
     }
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        // console.log("Handle Submit Work")
-        // console.log(profile);
-        // console.log(username)
 
         if(profile){
-            await editProfile({profile, username});
+            await editProfile({profile, email});
             dispatch(setUserProfile(profile));
         }
         else{
             toast.error("Please choose a profile picture...", {position : "top-center"});
         }
     }
-
-    useEffect(()=>{
-        console.log("useEffect Re-rendered");
-    },[submitForm.current])
 
     return(
         <section className="h-100 gradient-custom-2">
@@ -80,7 +73,10 @@ const Profile = (req, res) =>{
                                 <li className="d-inline">Email : {user.email}</li>
                             </div>
                             <div>
-                            <li className="d-inline">Password : &bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</li>
+                                <li className="d-inline">Password : &bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</li>
+                            </div>
+                            <div>
+                                <li className="d-inline">Role : {user.role}</li>
                             </div>
                             
                             

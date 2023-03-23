@@ -1,8 +1,8 @@
 {
     "home" : "Home",
-    "zone_attraction" : "Zone Attraction",
-    "tour_attraction" : "Tour Attraction",
-    "ticket"          : "Ticket",
+    "zone_attraction" : "Province",
+    "tour_attraction" : "Attraction & Ticket",
+    "myticket"          : "My Ticket",
     "contact_us"      : "Contact Us",
     "login"           : "Login",
     "sign_up"         : "Sign Up",

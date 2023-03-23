@@ -3,14 +3,16 @@ import Footer from "../components/footer/Footer";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useRef } from "react";
 import Spinner from "../components/spinner/Spinner";
 const Zone = () =>{
-    
+    const {id} = Number(useParams("id"));
     const [data, setData] = useState([]);
     const [thumbnail, setThumbnail] = useState("");
     const isLoading = useRef(false);
+    const [search, setSearch] = useState("");
+    const [page, setPage] = useState(1);
     useEffect(()=>{
         if(!isLoading.current){
             getZone();
@@ -19,7 +21,7 @@ const Zone = () =>{
     },[]);
 
     const getZone = async () =>{
-        const zoneUrl  = "https://domner-server.onrender.com/api/zone/"; 
+        const zoneUrl  = `http://localhost:8080/api/provinces?search=${search}&page=${page}`; 
         try{
             const result = await axios.get(zoneUrl);
             setData(result.data.data);
@@ -42,9 +44,9 @@ const Zone = () =>{
                             {
                                 data.map((element, index)=>{
                                     return(
-                                        <Link to={`../zone/${element.id}`} key={element.id} className="col-md-8 col-lg-6 col-xl-4 mb-xl-4">
+                                        <Link to={`../zone/${element._id}`} key={element._id} className="col-md-8 col-lg-6 col-xl-4 mb-xl-4">
                                             <div className="card text-black h-100">
-                                                <img height={300} src={data[index].thumbnail.split(" ")[0]} alt="" />
+                                                <img height={300} src={element.imageCover} alt="" />
                     
                                                 <div className="card-body">
                                                     <div className="text-center">

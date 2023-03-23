@@ -1,18 +1,19 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import { useSelector } from "react-redux";
-
+const {Token} = require("../data/Token");
 
 export const authApi = createApi({
     reducerPath : "ticketApi",
     baseQuery   : fetchBaseQuery({
-        baseUrl : "https://domner-server.onrender.com"
-        // baseUrl : "http://localhost:10000"
+        // baseUrl : "https://domner-server.onrender.com"
+        baseUrl : "http://localhost:8080"
     }),
     endpoints   : (builder) =>({
+
+
         loginUser : builder.mutation({
             query : ({email , password})=>{
                 return{
-                    url : "/api/login",
+                    url : "/api/user/login",
                     method : "post",
                     body : {email , password},
                 }
@@ -22,7 +23,7 @@ export const authApi = createApi({
         registerUser : builder.mutation({
             query : ({username,email , password, profile})=>{
                 return{
-                    url : "/api/register",
+                    url : "/api/user/register",
                     method : "post",
                     body : {username, email , password, profile},
                     headers : {
@@ -35,13 +36,15 @@ export const authApi = createApi({
         editProfile : builder.mutation(
             
             {
-            query : ({profile, username})=>{
+            query : ({profile, email})=>{
                 return{
-                    url : `/api/edit-profile-pic/`,
+                    url : `/api/user/updateProfile`,
                     method : "PUT",
-                    body : {profile, username},
+                    body : {profile, email},
                     headers : {
-                        'Access-Control-Allow-Origin': '*'
+                        'Access-Control-Allow-Origin': '*',
+                        'authorization' : `Bearer ${JSON.parse(localStorage.getItem("access-token")).token}`,
+
                     }
                 }
             }

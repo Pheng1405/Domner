@@ -9,10 +9,9 @@ import i18next from 'i18next';
 import "../../../node_modules/flag-icons/css/flag-icons.min.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../features/authSlice';
-
 const NavBar = () =>{
     const user = useSelector(state=>state.user.userProfile);
-    
+    // console.log();
     const dispatch = useDispatch();
 
    const {t} = useTranslation("navbar");
@@ -80,7 +79,7 @@ const NavBar = () =>{
                     <Link to="/attraction" className="nav-link border-animation">{t('tour_attraction')}</Link>
                 </li>
                 <li className="nav-item topborder">
-                    <Link to="/ticket" className="nav-link border-animation">{t('ticket')}</Link>
+                    <Link to="/myticket" className="nav-link border-animation">{t('myticket')}</Link>
                 </li>
                 <li className="nav-item topborder">
                     <Link to="/contact" className="nav-link border-animation" >{t('contact_us')}</Link>
@@ -95,7 +94,7 @@ const NavBar = () =>{
             <div className="d-flex align-items-center">
             {/* <!-- Icon --> */}
             <div className='me-3'>
-                <Link to={`/search`}><i class="fa fa-search" aria-hidden="true"></i></Link>
+                <Link to={`/search`}><i className="fa fa-search" aria-hidden="true"></i></Link>
             </div>
             <Link to={`/cart`} className="text-reset me-3" >
                 <i className="fas fa-shopping-cart"></i>
@@ -112,6 +111,7 @@ const NavBar = () =>{
 
             {/* <!-- Avatar --> */}
             {
+                // Is Login
                 ("username" in user) ? 
                 <div className="dropdown">
                     <Link
@@ -135,8 +135,22 @@ const NavBar = () =>{
 
                     <ul className='dropdown-menu dropdown-menu-end bg-orange p-0' aria-labelledby="navbarDropdownMenuAvatar">
                         <li className='bg-orange'>
-                            <Link to={`/profile/${user.username}`} className="dropdown-item hover-black" >My profile</Link>
+                            <Link to={`/profile/${user.email}`} className="dropdown-item hover-black" >My profile</Link>
                         </li>
+                        {
+                            // Admin Only
+                            user.role === "admin" && 
+                            <>
+                                <li className='bg-orange'>
+                                    <Link to={`/posts`} className="dropdown-item hover-black" >Post Management</Link>
+                                </li>
+                                <li className='bg-orange'>
+                                    <Link to={`/orders`} className="dropdown-item hover-black" >Orders</Link>
+                                </li>
+                            </>
+                            
+                        }
+                        
                         <li className='bg-orange'>
                             <Link to={`../`} className="dropdown-item hover-black" onClick={()=>{dispatch(logoutUser());}} >Logout</Link>
                         </li>
@@ -144,6 +158,7 @@ const NavBar = () =>{
 
                 </div>
 
+                // If not login
                 : 
                 <div className="dropdown">
                     <Link
@@ -178,6 +193,7 @@ const NavBar = () =>{
                 </div>
             }
             
+            {/* {Change Language} */}
             <div className="dropdown ms-3">
                 <Link
                     className="dropdown-toggle d-flex align-items-center hidden-arrow"

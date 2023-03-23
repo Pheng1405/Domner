@@ -54,12 +54,12 @@ const CartList = () =>{
                 </div>
                 {
                     cart.cartItems.map(item => 
-                        <div key={item.id} className="row border-bottom">
+                        <div key={item._id} className="row border-bottom">
                             <div className="col-2 d-flex align-items-center">
-                                <img width={100} height={100} src={item.thumbnail} alt="" />
+                                <img width={100} height={100} src={item.imageCover} alt="" />
                             </div>
                             <div className="col-2 d-flex align-items-center">
-                                {item.title}
+                                {item.name}
                             </div>
                             <div className="col-2 d-flex align-items-center">{item.price}$</div>
                             <div className="col-2 d-flex align-items-center">
@@ -93,7 +93,7 @@ const CartList = () =>{
                                     <div className="row d-flex justify-content-between px-4">
                                         <p className="mb-1 text-left">Cart</p>
                                         {
-                                            cart.cartItems.map(e=><p className="fw-light" key={e.id}>- {e.title.substring(0,35)}...</p>)
+                                            cart.cartItems.map(e=><p className="fw-light" key={e.id}>- {e.name.substring(0,35)}...</p>)
                                         }
                                     </div>
                                     

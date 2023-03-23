@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const ImagesExplorer = () =>{
-    const url = "https://domner-server.onrender.com/api/popular/thumbnail/limit=8";
+    const url = "http://localhost:8080/api/tours/?sortType=visited&sortData=-1&limit=8";
     const [data, setData] = useState([]);
     useEffect(()=>{
         getData();
@@ -37,8 +37,8 @@ const ImagesExplorer = () =>{
                         {
                             data.map((element, index)=>{
                                 return(
-                                    <Link key={element.id} to={`/attraction/${element.id}`} className="col-6 col-md-3 h-50 overflow-hidden">
-                                        <img src={element.thumbnail} className="fit-cover img-hover" alt={element.title}/>
+                                    <Link key={element.id} to={`/attraction/${element._id}`} className="col-6 col-md-3 h-50 overflow-hidden">
+                                        <img src={element.imageCover} className="fit-cover img-hover" alt={element.name}/>
                                     </Link>
                                     
                                 )

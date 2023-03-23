@@ -17,7 +17,7 @@ const cartSlice = createSlice({
             // console.log(state.cartItems);
 
 
-            const itemIndex =  state.cartItems.findIndex(e => e.id === action.payload.id);
+            const itemIndex =  state.cartItems.findIndex(e => e._id === action.payload._id);
 
             if(itemIndex >= 0){
                 state.cartItems[itemIndex].cartQuantity += 1;
@@ -33,7 +33,7 @@ const cartSlice = createSlice({
             
         },
         removeFromCart(state, action){
-            const nextCartItem = state.cartItems.filter(e => e.id !== action.payload.id);
+            const nextCartItem = state.cartItems.filter(e => e._id !== action.payload._id);
             state.cartItems = nextCartItem;
             toast.error("Tickets removed from cart...", {position : "bottom-left"});
 
@@ -48,7 +48,7 @@ const cartSlice = createSlice({
         },
 
         increaseItem(state, action){
-            const itemIndex = state.cartItems.findIndex(e=> e.id === action.payload.id);
+            const itemIndex = state.cartItems.findIndex(e=> e._id === action.payload._id);
 
             state.cartItems[itemIndex].cartQuantity += 1;
             toast.info(`Ticket increased...`, {position : "bottom-left"});
@@ -56,10 +56,10 @@ const cartSlice = createSlice({
             localStorage.setItem("domnerCart", JSON.stringify(state.cartItems));
         },
         decreaseItem(state, action){
-            const itemIndex = state.cartItems.findIndex(e=> e.id === action.payload.id);
+            const itemIndex = state.cartItems.findIndex(e=> e._id === action.payload._id);
             
             if(state.cartItems[itemIndex].cartQuantity == 1){
-                const nextCartItem = state.cartItems.filter(e => e.id !== action.payload.id);
+                const nextCartItem = state.cartItems.filter(e => e._id !== action.payload._id);
                 state.cartItems = nextCartItem;
                 toast.error("Tickets removed from cart...", {position : "bottom-left"});
             }

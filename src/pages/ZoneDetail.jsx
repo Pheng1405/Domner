@@ -5,12 +5,9 @@ import SmallSlider from "../components/Small-Slider/SmallSlider";
 import { useRef } from "react";
 import Spinner from "../components/spinner/Spinner";
 const ZoneDetail = () =>{
-    let id = useParams("id");
-    id = Number(id.id);
+    let {id} = useParams("id");
 
     const [zone, setZone] = useState([]);
-    const [activity, setActivity] = useState([]);
-    
     // const [thumbnail, setThumbnail] = useState([]);
     const isFetched = useRef(false);
 
@@ -21,17 +18,16 @@ const ZoneDetail = () =>{
     },[id]);
 
     const getZone = async () =>{
-        await axios.get(`https://domner-server.onrender.com/api/zone/${id}`)
-        .then((res)=>{
-            let data = res.data[0];
-
-            setZone(data);
-            setActivity(data.suggestion_activity);
+        await axios.get(`http://localhost:8080/api/province/${id}`)
+        .then(res=>{
+            setZone(res.data.data);
             // console.log(data.suggestion_activity);
-            
-            let arrThumbnail = data.thumbnail.split(" ");
-            setLarge(arrThumbnail[0]);
-            setImg(arrThumbnail.filter((e)=> e!== arrThumbnail[0]));
+            let arrThumbnail;
+            if(res.data.data.images.length)
+                arrThumbnail = res.data.data.images[0];
+
+            setLarge(res.data.data.imageCover);
+            setImg(res.data.data.images);
             
         })
         .catch((err)=>{
@@ -105,102 +101,7 @@ const ZoneDetail = () =>{
                         </div>
                     </div>
             
-                    <div className="container-fluid my-5">
-                    {
-                            activity.map((element,ind)=>{
-
-                                // console.log(element[ind]);
-
-                                if(element.length > 1){
-                                  
-                                    
-                                
-                                    for(let i in element){
-                                        // console.log(element[i]);
-                                        return(
-                                            <div className="container" key={element[i].id}>
-                                                    <div className="row">
-                                                        <div className="col-12 col-md-3">
-                                                            
-                                                            <p className="mt-3 mb-2 fw-bolder fs-5">{element[i].type}</p>
-                                                            <p className="mb-2 fw-light">{element[i].description.substring(0,100)}...</p>
-                                                            <Link className="hover-underline">See all</Link>
-                                                        </div>
-                                                        <div className="col-12 col-md-9 pb-5">
-                                                            <SmallSlider slideDetail={element}></SmallSlider>
-                                                        </div>
-                                                    </div>
-                                            </div>
-                                        )
-                                    }
-                                }
-                                if(element.length == 1){
-                                    for(let i in element){
-                                
-                                        
-                                        return(
-                                           
-                                            <div className="container" key={element[i].id}>
-                                                    <div className="row">
-                                                        <div className="col-12 col-md-3">
-                                                            
-                                                            <p className="mt-3 mb-2 fw-bolder fs-5">{element[i].type}</p>
-                                                            <p className="mb-2 fw-light">{element[i].description.substring(0,100)}...</p>
-                                                            <Link className="hover-underline">See all</Link>
-                                                        </div>
-                                                        <div className="col-12 col-md-9 pb-5">
-                                                            <SmallSlider slideDetail={element}></SmallSlider>
-                                                        </div>
-                                                    </div>
-                                            </div>
-                                        )
-                                    }
-                                }
-
-                                
-
-                                // return(
-                                //     <div className="container">
-                                //              <div className="row">
-                                //                  <div className="col-12 col-md-3">
-                                                    
-                                //                      <p className="mt-3 mb-2 fw-bolder fs-5">{1}</p>
-                                //                      <p className="mb-2 fw-light">{element.description}</p>
-                                //                      <Link className="hover-underline">See all</Link>
-                                //                  </div>
-                                //                  <div className="col-12 col-md-9 pb-5">
-                                //                      {/* <SmallSlider slideDetail={activity[ind].item}></SmallSlider> */}
-                                //                  </div>
-                                //              </div>
-                                //     </div>
-                                // )
-
-                                // console.log(e.length);
-
-                                // if(element.length == 1){
-                                //     return(
-                                        
-                                //         <div className="container">
-                                //             <div className="row">
-                                //                 <div className="col-12 col-md-3">
-                                                    
-                                //                     <p className="mt-3 mb-2 fw-bolder fs-5">{e.title}</p>
-                                //                     <p className="mb-2 fw-light">{e.description}</p>
-                                //                     <Link className="hover-underline">See all</Link>
-                                //                 </div>
-                                //                 <div className="col-12 col-md-9 pb-5">
-                                //                     {/* <SmallSlider slideDetail={activity[ind].item}></SmallSlider> */}
-                                //                 </div>
-                                //             </div>
-                                //         </div>
-                                //     )
-                                // }
-                                // else{
-                                //     console.log(element.length);
-                                // }
-                            })
-                        }
-                    </div>
+                    
                 </div>
             }
             

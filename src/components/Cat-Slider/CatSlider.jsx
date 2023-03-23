@@ -15,13 +15,14 @@ export default function CatSlider(prop) {
 
   const getZone = async () =>{
       await axios({
-          url : "https://domner-server.onrender.com/api/zone/",
+          url : "http://localhost:8080/api/provinces",
           method : "GET",
           data : {},
       })
       .then((res)=>{
           let data = res.data;
           data = data.data;
+          console.log(data)
           setZone(data);  
           
       })
@@ -72,10 +73,10 @@ export default function CatSlider(prop) {
         <Slider {...settings}>
             {zone.map((item,index)=>{
                     return(  
-                        <Link key={index} to={"/zone/"+item.id} >
+                        <Link key={index} to={"/zone/"+item._id} >
                               <div className='cat-box'>
                                   <div className="cat-img-box">
-                                      <img src={item.thumbnail.split(" ")[0]} alt="" />
+                                      <img src={item.imageCover && item.imageCover} alt="" />
                                   </div>
                                   
                                 <div className='cat-desc px-4 d-flex flex-column justify-content-center'>
@@ -87,7 +88,7 @@ export default function CatSlider(prop) {
                                         <i className="fa-solid fa-star"></i>
                                         <i className="fa-solid fa-star"></i>
                                         
-                                        {item.total_rate} Reviews
+                                        {item.rating && 1} Reviews
                                     </div>
                                     <div>
                                       <p className="d-none d-md-block leading fw-lighter mb-3">{item.description.substring(0,68)+"..."}</p>

@@ -17,7 +17,7 @@ const MostVisited = () =>{
 
     const PopularTour = async () =>{
         try{
-            const response = await axios.get("https://domner-server.onrender.com/api/popular/limit=1");
+            const response = await axios.get("http://localhost:8080/api/tours/?sortType=visited&sortData=-1&limit=1");
             setMostVisit(response.data.data);
         }
         catch(error){
@@ -49,13 +49,13 @@ const MostVisited = () =>{
                     {
                         mostVisit.map((element, idx)=>{
                             return(
-                                <Link key={idx} className="col-12 col-lg-8 p-0" to={`attraction/${element.id}`}>
+                                <Link key={element._id} className="col-12 col-lg-8 p-0" to={`attraction/${element._id}`}>
                                         <div className="mini-describe d-flex justify-content-between">
                                             <div className="image-container overflow-hidden">
-                                                <img className="fit-cover img-hover " src={element.thumbnail} alt="" />
+                                                <img className="fit-cover img-hover " src={element.imageCover} alt="" />
                                             </div>
                                             <div className="detail-container w-50 h-100 pe-3">
-                                                <p className="fw-bolder fs-2 mt-4 text-orange p-0">{element.title.substring(0,48)}</p>
+                                                <p className="fw-bolder fs-2 mt-4 text-orange p-0">{element.name.substring(0,48)}</p>
                                                 <p className="fw-lighter mt-2 d-none d-lg-block">
                                                     {element.description.substring(0,450)}...
                                                 </p>

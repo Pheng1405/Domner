@@ -3,6 +3,7 @@ import axios from "axios";
 
 const initialState = {
     items   : [],
+    pageNumber : 2,
     status : null,
 }
 
@@ -10,7 +11,7 @@ export const ticketFetch = createAsyncThunk(
     "tickets/ticketFetch",
     async(id=null, {rejectWithValue}) => {
         try{
-            const response = await axios.get("https://domner-server.onrender.com/api/popular/");
+            const response = await axios.get("http://localhost:8080/");
             return response?.data.data;
         }
         catch(error){
@@ -23,8 +24,11 @@ const ticketSlice = createSlice({
     name : "tickets",
     initialState,
     reducers : {
-
+        changePageNumber: (state, action) =>{
+            state.pageNumber = action.payload;
+        }
     },
+    
     extraReducers : (builder) => {
         builder.addCase(ticketFetch.pending,(state, action) =>{
             state.status  =  "pending"
@@ -52,3 +56,4 @@ const ticketSlice = createSlice({
 })
 
 export default ticketSlice.reducer;
+export const {changePageNumber} = ticketSlice.actions;
